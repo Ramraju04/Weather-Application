@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1>Weather Dashboard</h1>
+    <span id="last-updated">Last updated: --</span>
+  </header>
+  <main class="container">
+    <section class="input-panel">
+      <form class="weather-form" onsubmit="event.preventDefault(); findUserLocation();">
+        <input id="user-location" type="text" placeholder="Enter Location" autocomplete="off">
+        <select id="convertor">
+          <option value="Celsius">Celsius</option>
+          <option value="Fahrenheit">Fahrenheit</option>
+        </select>
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+      <div class="weather-icon-block">
+        <span class="weatherIcon"></span>
+      </div>
+      <div class="city-country"></div>
+      <div class="weather-desc"></div>
+      <div class="temperature"></div>
+      <div class="feelsLike"></div>
+    </section>
+    <section class="weather-info">
+      <div class="highlights">
+        <div>
+          <i class="fa fa-water"></i>
+          <span>Humidity</span>
+          <div id="HValue">--</div>
+        </div>
+        <div>
+          <i class="fa fa-wind"></i>
+          <span>Wind</span>
+          <div id="WValue">--</div>
+        </div>
+        <div>
+          <i class="fa fa-cloud"></i>
+          <span>Clouds</span>
+          <div id="CValue">--</div>
+        </div>
+        <div>
+          <i class="fa fa-arrow-up"></i>
+          <span>Pressure</span>
+          <div id="PValue">--</div>
+        </div>
+        <div>
+          <i class="fa fa-sun"></i>
+          <span>UV Index</span>
+          <div id="UVValue">--</div>
+        </div>
+        <div>
+          <i class="fa fa-clock"></i>
+          <span>Sunrise</span>
+          <div id="SRValue">--</div>
+        </div>
+        <div>
+          <i class="fa fa-moon"></i>
+          <span>Sunset</span>
+          <div id="SSValue">--</div>
+        </div>
+      </div>
+      <div class="forecast"></div>
+    </section>
+  </main>
+  <footer>
+    <p>Powered by OpenWeatherMap | &copy; 2025</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
